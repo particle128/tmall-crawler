@@ -1,5 +1,24 @@
-1.配置文件config.txt里面参数介绍：
-max：最大获取宝贝数。因为天猫每次搜索只能得到100页，每页60个宝贝，所以每一次搜索最多能得到6000个宝贝的信息。设置成更大的数也没有意义。不过你可以设置小一点。
-keyword：搜索的关键字。暂时不支持组合关键字，如果需要也可以在后续版本加进去。
-2.操作方法：
-配置好config.txt之后，运行main.exe即可。结果会保存到当前文件夹下，命名格式为record[月日时分秒].txt
+Tmall goods Crawler
+===
+
+## Introduction
+The crawler is used to grab information of goods in [www.tmall.com](http://www.tmall.com)
+
+## Requirements
+```
+sudo pip install beautifulsoup
+sudo pip install requests
+```
+
+## Configuration
+fields in config.txt:    
+* max: the maximum number of goods you would like to grab. 
+Because of tmall's restriction, the upper bound is 6000. If you want to get more goods information, modify the source code a little bit.  
+* keyword: the keyword of goods
+Only one keyword is supported for the moment.  
+
+## Usage
+```
+python main.py
+```
+The results will be saved in `record[mmddhhMMss].txt` in the current directory 
